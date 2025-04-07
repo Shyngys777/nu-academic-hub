@@ -36,3 +36,18 @@ export interface DashboardStats {
   plannedStudySessions: number;
   totalStudyHours: number;
 }
+
+export interface CourseReview {
+  id: string;
+  courseCode: string;
+  professorName: string;
+  semester: string;
+  year: number;
+  rating: number; // 1-5
+  difficulty: number; // 1-5
+  workload: number; // 1-5
+  comment: string;
+  anonymous: boolean;
+  authorId?: string;
+  createdAt: string;
+}

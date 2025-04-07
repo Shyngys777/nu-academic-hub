@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { Toaster } from "@/components/ui/toaster";
 
 const Layout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -26,6 +27,7 @@ const Layout = () => {
           <Outlet />
         </main>
       </div>
+      <Toaster />
     </div>
   );
 };
