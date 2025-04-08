@@ -58,6 +58,19 @@ export default function SearchDialog() {
     }
   }, []);
 
+  // Keyboard shortcut handler for Command+K / Ctrl+K
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        setOpen(true);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   // Save recent searches to localStorage
   const saveRecentSearch = (searchTerm: string) => {
     if (!searchTerm.trim()) return;
@@ -125,7 +138,7 @@ export default function SearchDialog() {
         </button>
       </motion.div>
 
-      {/* Keyboard shortcut handler */}
+      {/* Search Dialog */}
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="p-0 max-w-3xl gap-0 border-none bg-transparent">
           <Command className="rounded-xl border shadow-2xl">
@@ -258,19 +271,6 @@ export default function SearchDialog() {
           </Command>
         </DialogContent>
       </Dialog>
-
-      {/* Keyboard shortcut handler */}
-      <useEffect>
-        const handleKeyDown = (e: KeyboardEvent) => {
-          if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-            e.preventDefault();
-            setOpen(true);
-          }
-        };
-
-        window.addEventListener('keydown', handleKeyDown);
-        return () => window.removeEventListener('keydown', handleKeyDown);
-      </useEffect>
     </>
   );
 }
