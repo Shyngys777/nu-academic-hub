@@ -27,7 +27,7 @@ const CallToActionSection = () => {
       >
         <div className="absolute inset-0 bg-nu-darkblue">
           <div 
-            className="absolute inset-0 bg-[url('https://cdn.nur.kz/images/1200x675/bff2edff8eaf0a4a.jpeg')] bg-cover bg-center mix-blend-overlay opacity-30"
+            className="absolute inset-0 bg-[url('https://nu.edu.kz/media/%D0%A4%D0%BE%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%B8%20%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D1%85%20%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86/DJI_0958.jpg')] bg-cover bg-center mix-blend-overlay opacity-30"
           ></div>
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-nu-darkblue to-transparent"></div>

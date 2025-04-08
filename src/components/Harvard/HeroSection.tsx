@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
 import { Menu, Search, X } from "lucide-react";
+import SearchDialog from "../SearchDialog";
 
 const HeroSection = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -54,26 +55,19 @@ const HeroSection = () => {
             </motion.span>
           </Link>
 
-          <div className="flex items-center">
+          <div className="flex items-center space-x-4">
+            <div className="hidden md:block">
+              <SearchDialog />
+            </div>
+            
             <Button
               variant="ghost"
-              size="icon"
-              className="mr-2"
-              onClick={() => console.log("Search clicked")}
-            >
-              <Search className="h-5 w-5" />
-              <span className="sr-only">Search</span>
-            </Button>
-
-            <Button
-              variant="ghost"
-              size="icon"
+              size="lg"
+              className="text-lg font-medium"
               onClick={() => setIsMenuOpen(true)}
             >
-              <Menu className="h-5 w-5" />
-              <span className="sr-only md:not-sr-only md:ml-2 md:inline-block">
-                Menu
-              </span>
+              <Menu className="h-5 w-5 mr-2" />
+              <span>Menu</span>
             </Button>
           </div>
         </div>
@@ -214,7 +208,8 @@ const HeroSection = () => {
       <div className="relative h-screen flex items-center overflow-hidden">
         {/* Background image or gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-gray-100 to-gray-200 z-0">
-          <div className="absolute inset-0 bg-[url('https://cdn.nur.kz/images/1200x675/bff2edff8eaf0a4a.jpeg')] bg-cover bg-center opacity-20"></div>
+          <div className="absolute inset-0 bg-[url('https://nu.edu.kz/media/%D0%A4%D0%BE%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%B8%20%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D1%85%20%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86/DJI_0958.jpg')] bg-cover bg-center opacity-30"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
         </div>
 
         {/* Content */}
@@ -229,7 +224,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 1, ease: "easeOut" }}
-              className="text-4xl md:text-6xl lg:text-7xl text-gray-900 font-serif leading-tight mb-8"
+              className="text-5xl md:text-7xl lg:text-8xl text-gray-900 font-serif leading-tight mb-8"
             >
               Welcome to{" "}
               <span className="block text-nu-blue">NU Academic Hub</span>
@@ -250,7 +245,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.1, duration: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-4 mt-8"
             >
               <Button
                 asChild
@@ -271,27 +266,16 @@ const HeroSection = () => {
           </motion.div>
         </div>
 
-        {/* Scroll indicator */}
+        {/* Search component that's prominently displayed */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.3, duration: 0.8 }}
+          className="absolute bottom-36 md:bottom-40 left-0 right-0 flex justify-center px-6"
         >
-          <span className="text-sm text-gray-500 mb-2">Scroll to explore</span>
-          <motion.div
-            animate={{
-              y: [0, 8, 0],
-            }}
-            transition={{
-              repeat: Infinity,
-              duration: 1.5,
-              ease: "easeInOut",
-            }}
-            className="w-5 h-10 border-2 border-gray-400 rounded-full flex justify-center pt-2"
-          >
-            <motion.div className="w-1 h-1 bg-gray-400 rounded-full"></motion.div>
-          </motion.div>
+          <div className="w-full max-w-3xl">
+            <SearchDialog />
+          </div>
         </motion.div>
       </div>
     </>
