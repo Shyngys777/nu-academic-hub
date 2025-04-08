@@ -214,7 +214,7 @@ const HeroSection = () => {
       <div className="relative h-screen flex items-center overflow-hidden">
         {/* Background image or gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-gray-100 to-gray-200 z-0">
-          <div className="absolute inset-0 bg-[url('/lovable-uploads/4e70c543-cac3-40d3-81ac-60adaed1eb03.png')] bg-cover bg-center opacity-20"></div>
+          <div className="absolute inset-0 bg-[url('https://cdn.nur.kz/images/1200x675/bff2edff8eaf0a4a.jpeg')] bg-cover bg-center opacity-20"></div>
         </div>
 
         {/* Content */}
