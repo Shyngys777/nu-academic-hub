@@ -11,6 +11,7 @@ import Materials from "./pages/Materials";
 import Layout from "./components/Layout";
 import NotFound from "./pages/NotFound";
 import Index from "./pages/Index";
+import Settings from "./pages/Settings";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -28,12 +29,13 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route index element={<Index />} />
+          <Route path="/" element={<Index />} />
           <Route path="/dashboard" element={<Layout />}>
             <Route index element={<Dashboard />} />
             <Route path="exams" element={<ExamSchedule />} />
             <Route path="planner" element={<StudyPlanner />} />
             <Route path="materials" element={<Materials />} />
+            <Route path="settings" element={<Settings />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

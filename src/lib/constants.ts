@@ -1,35 +1,23 @@
 
-// Application theme colors
+// Theme colors for the NU Academic Hub
 export const THEME_COLORS = {
-  // Primary colors
-  nuBlue: "#0055a5",
-  nuYellow: "#f7be16",
-  
-  // Secondary colors
-  nuDarkBlue: "#003366",
-  nuLightBlue: "#007bff",
-  
-  // Functional colors
-  success: "#4caf50",
-  warning: "#ff9800",
-  error: "#f44336",
-  info: "#2196f3",
+  nuBlue: '#005CB9',
+  nuYellow: '#FFC627',
+  nuDarkBlue: '#003366',
+  nuLightBlue: '#B3D4FC',
 };
 
-// Academic schools in Nazarbayev University
-export const NU_SCHOOLS = [
-  "School of Engineering and Digital Sciences (SEDS)",
-  "School of Sciences and Humanities (SSH)",
-  "School of Mining and Geosciences (SMG)",
-  "Graduate School of Business (GSB)",
-  "Graduate School of Public Policy (GSPP)",
-  "School of Medicine (SOM)"
+// Academic data
+export const ACADEMIC_TERMS = [
+  "Fall 2024",
+  "Spring 2025",
+  "Summer 2025"
 ];
 
-// Study material types
-export const MATERIAL_TYPES = [
-  "EXAM",
-  "NOTE",
-  "SOLUTION",
-  "OTHER"
+export const SCHOOLS = [
+  "School of Engineering and Digital Sciences (SEDS)",
+  "School of Sciences and Humanities (SSH)",
+  "Graduate School of Business (GSB)",
+  "School of Mining and Geosciences (SMG)",
+  "School of Medicine (SOM)"
 ];
