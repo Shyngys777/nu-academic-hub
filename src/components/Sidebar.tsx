@@ -1,6 +1,6 @@
 
 import { NavLink } from "react-router-dom";
-import { LayoutDashboard, CalendarDays, BookOpen, FolderOpen, Settings, X } from "lucide-react";
+import { LayoutDashboard, CalendarDays, BookOpen, FolderOpen, Settings, X, Home } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -15,10 +15,10 @@ const Sidebar = ({ isOpen, setIsOpen }: SidebarProps) => {
   const isMobile = useIsMobile();
   
   const navItems = [
-    { name: "Dashboard", path: "/", icon: LayoutDashboard },
-    { name: "Exam Schedule", path: "/exams", icon: CalendarDays },
-    { name: "Study Planner", path: "/planner", icon: BookOpen },
-    { name: "Materials", path: "/materials", icon: FolderOpen },
+    { name: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
+    { name: "Exam Schedule", path: "/dashboard/exams", icon: CalendarDays },
+    { name: "Study Planner", path: "/dashboard/planner", icon: BookOpen },
+    { name: "Materials", path: "/dashboard/materials", icon: FolderOpen },
   ];
 
   if (!isOpen) return null;
@@ -65,7 +65,18 @@ const Sidebar = ({ isOpen, setIsOpen }: SidebarProps) => {
         
         <nav className="space-y-1">
           <NavLink 
-            to="/settings"
+            to="/"
+            onClick={() => isMobile && setIsOpen(false)}
+            className={({ isActive }) => cn(
+              "flex items-center px-3 py-2 text-sm rounded-md transition-all",
+              "text-gray-700 hover:bg-gray-100"
+            )}
+          >
+            <Home className="mr-3 h-5 w-5" />
+            Back to Home
+          </NavLink>
+          <NavLink 
+            to="/dashboard/settings"
             onClick={() => isMobile && setIsOpen(false)}
             className={({ isActive }) => cn(
               "flex items-center px-3 py-2 text-sm rounded-md transition-all",

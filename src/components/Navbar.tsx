@@ -25,7 +25,7 @@ const Navbar = ({ onMenuClick }: NavbarProps) => {
         <Button variant="ghost" size="icon" onClick={onMenuClick} className="mr-4">
           <Menu className="h-5 w-5" />
         </Button>
-        <Link to="/" className="flex items-center space-x-2">
+        <Link to="/dashboard" className="flex items-center space-x-2">
           <div className="w-8 h-8 rounded bg-nu-blue flex items-center justify-center">
             <span className="text-white font-bold">NU</span>
           </div>
@@ -66,7 +66,7 @@ const Navbar = ({ onMenuClick }: NavbarProps) => {
               </div>
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem className="text-primary cursor-pointer">Mark all as read</DropdownMenuItem>
+            <DropdownMenuItem className="text-primary cursor-pointer" onClick={() => setNotifications(0)}>Mark all as read</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
         <DropdownMenu>
