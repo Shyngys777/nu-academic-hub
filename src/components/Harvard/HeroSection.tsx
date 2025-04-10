@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -56,7 +55,7 @@ const HeroSection = () => {
           </Link>
 
           <div className="flex items-center space-x-4">
-            <div className="hidden md:block">
+            <div className="w-[400px]">
               <SearchDialog />
             </div>
             
@@ -206,13 +205,11 @@ const HeroSection = () => {
 
       {/* Hero Section */}
       <div className="relative h-screen flex items-center overflow-hidden">
-        {/* Background image or gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-gray-100 to-gray-200 z-0">
           <div className="absolute inset-0 bg-[url('https://nu.edu.kz/media/%D0%A4%D0%BE%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%B8%20%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D1%85%20%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86/DJI_0958.jpg')] bg-cover bg-center opacity-30"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
         </div>
 
-        {/* Content */}
         <div className="container mx-auto px-6 relative z-10 pt-24">
           <motion.div
             initial={{ opacity: 0 }}
@@ -266,7 +263,6 @@ const HeroSection = () => {
           </motion.div>
         </div>
 
-        {/* Search component that's prominently displayed */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
