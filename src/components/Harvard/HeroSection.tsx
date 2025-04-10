@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
-import SearchDialog from "../SearchDialog";
+import { Menu, X, Search } from "lucide-react";
 
 const HeroSection = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -56,9 +55,18 @@ const HeroSection = () => {
           </Link>
 
           <div className="flex items-center space-x-4">
-            <div className="w-[200px] lg:w-[250px]">
-              <SearchDialog />
-            </div>
+            {/* Harvard-style search button */}
+            <Link
+              to="#"
+              onClick={(e) => {
+                e.preventDefault();
+                // You could trigger a search dialog here
+              }}
+              className="flex items-center px-4 py-2 rounded-full bg-white/80 hover:bg-nu-gold/10 border border-gray-300 shadow-sm transition-all duration-300"
+            >
+              <Search className="h-5 w-5 mr-2 text-gray-500" />
+              <span className="text-gray-600">Search</span>
+            </Link>
             
             <Button
               variant="ghost"

@@ -124,18 +124,13 @@ export default function SearchDialog() {
     <>
       <motion.div
         whileHover={{ scale: 1.02 }}
-        className="w-full"
+        onClick={() => setOpen(true)}
+        className="cursor-pointer"
       >
-        <button 
-          onClick={() => setOpen(true)}
-          className="flex items-center w-full gap-2 px-4 py-3 bg-white/80 backdrop-blur-md rounded-full border shadow-lg hover:shadow-xl hover:bg-nu-gold/10 transition-all duration-300 group"
-        >
-          <Search className="h-5 w-5 text-gray-500 group-hover:text-nu-blue transition-colors" />
-          <span className="text-gray-600 group-hover:text-gray-900 transition-colors font-medium text-sm">Search for exams, materials, and more...</span>
-          <div className="hidden md:flex items-center ml-auto">
-            <kbd className="bg-gray-100 px-2 py-1 text-xs rounded">⌘K</kbd>
-          </div>
-        </button>
+        <div className="flex items-center px-4 py-2 rounded-full bg-white/80 hover:bg-nu-gold/10 border border-gray-300 shadow-sm transition-all duration-300">
+          <Search className="h-5 w-5 mr-2 text-gray-500" />
+          <span className="text-gray-600">Search</span>
+        </div>
       </motion.div>
 
       {/* Search Dialog */}
