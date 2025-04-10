@@ -9,6 +9,7 @@ import Dashboard from "./pages/Dashboard";
 import ExamSchedule from "./pages/ExamSchedule";
 import StudyPlanner from "./pages/StudyPlanner";
 import Materials from "./pages/Materials";
+import SmartMind from "./pages/SmartMind";
 import Layout from "./components/Layout";
 import NotFound from "./pages/NotFound";
 import Index from "./pages/Index";
@@ -35,6 +36,7 @@ const App = () => (
               <Route path="exams" element={<ExamSchedule />} />
               <Route path="planner" element={<StudyPlanner />} />
               <Route path="materials" element={<Materials />} />
+              <Route path="smartmind" element={<SmartMind />} />
               <Route path="settings" element={<Settings />} />
             </Route>
             <Route path="*" element={<NotFound />} />

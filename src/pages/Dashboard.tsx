@@ -3,12 +3,14 @@ import { useQuery } from "@tanstack/react-query";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
-import { CalendarDays, BookOpen, GraduationCap, Clock } from "lucide-react";
+import { CalendarDays, BookOpen, GraduationCap, Clock, BrainCircuit } from "lucide-react";
 import { DashboardStats, Exam } from "@/types";
 import { getAllExams } from "@/services/api";
 import { Skeleton } from "@/components/ui/skeleton";
 import { format, isAfter, parseISO } from "date-fns";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 // Mock data for dashboard stats
 const fetchDashboardStats = async (): Promise<DashboardStats> => {
@@ -89,6 +91,30 @@ const Dashboard = () => {
       
       <motion.h1 variants={itemVariants} className="text-3xl font-serif text-nu-darkblue mb-1">Academic Dashboard</motion.h1>
       <motion.p variants={itemVariants} className="text-muted-foreground mb-6">Welcome back to your academic hub.</motion.p>
+
+      {/* Featured SmartMind Section */}
+      <motion.div variants={itemVariants} className="mb-8">
+        <Card className="overflow-hidden border-l-4 border-l-nu-blue bg-gradient-to-r from-nu-blue/5 to-transparent">
+          <CardContent className="p-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex-1">
+              <div className="flex items-center gap-2 mb-2">
+                <BrainCircuit className="h-5 w-5 text-nu-blue" />
+                <h3 className="font-semibold text-lg text-nu-darkblue">SmartMind AI</h3>
+              </div>
+              <p className="mb-4 text-muted-foreground">Experience our new AI-powered learning assistant that helps you study smarter.</p>
+              <Button asChild className="bg-nu-blue hover:bg-nu-darkblue">
+                <Link to="/dashboard/smartmind">Try SmartMind Now</Link>
+              </Button>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 w-full md:w-1/2">
+              <p className="font-medium mb-2">What will you discover today?</p>
+              <div className="bg-gray-50 rounded-lg p-3 text-sm text-gray-600">
+                Ask questions about your courses, get help with assignments, create study materials, or practice for exams.
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </motion.div>
 
       {/* Stats Cards */}
       <motion.div 

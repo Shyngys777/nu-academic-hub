@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -55,7 +56,7 @@ const HeroSection = () => {
           </Link>
 
           <div className="flex items-center space-x-4">
-            <div className="w-[400px]">
+            <div className="w-[200px] lg:w-[250px]">
               <SearchDialog />
             </div>
             
@@ -162,6 +163,19 @@ const HeroSection = () => {
                 transition={{ delay: 0.5 }}
               >
                 <Link
+                  to="/dashboard/smartmind"
+                  className="text-4xl md:text-5xl font-light hover:text-nu-gold transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  SmartMind
+                </Link>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+              >
+                <Link
                   to="/dashboard/settings"
                   className="text-4xl md:text-5xl font-light hover:text-nu-gold transition-colors"
                   onClick={() => setIsMenuOpen(false)}
@@ -257,7 +271,7 @@ const HeroSection = () => {
                 size="lg"
                 className="border-nu-blue text-nu-blue hover:bg-nu-blue/5 px-8 py-6 text-lg"
               >
-                <Link to="/dashboard/exams">View Exam Schedule</Link>
+                <Link to="/dashboard/smartmind">Try SmartMind AI</Link>
               </Button>
             </motion.div>
           </motion.div>

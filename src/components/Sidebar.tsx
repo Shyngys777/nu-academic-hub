@@ -1,6 +1,6 @@
 
 import { NavLink } from "react-router-dom";
-import { LayoutDashboard, CalendarDays, BookOpen, FolderOpen, Settings, X, Home } from "lucide-react";
+import { LayoutDashboard, CalendarDays, BookOpen, FolderOpen, Settings, X, Home, BrainCircuit } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -19,6 +19,7 @@ const Sidebar = ({ isOpen, setIsOpen }: SidebarProps) => {
     { name: "Exam Schedule", path: "/dashboard/exams", icon: CalendarDays },
     { name: "Study Planner", path: "/dashboard/planner", icon: BookOpen },
     { name: "Materials", path: "/dashboard/materials", icon: FolderOpen },
+    { name: "SmartMind", path: "/dashboard/smartmind", icon: BrainCircuit },
   ];
 
   if (!isOpen) return null;
