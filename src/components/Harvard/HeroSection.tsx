@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
-import { Menu, Search, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import SearchDialog from "../SearchDialog";
 
 const HeroSection = () => {
@@ -212,8 +212,8 @@ const HeroSection = () => {
 
         <div className="container mx-auto px-6 relative z-10 pt-24">
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1 }}
             className="max-w-4xl"
           >
@@ -262,17 +262,6 @@ const HeroSection = () => {
             </motion.div>
           </motion.div>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.3, duration: 0.8 }}
-          className="absolute bottom-36 md:bottom-40 left-0 right-0 flex justify-center px-6"
-        >
-          <div className="w-full max-w-3xl">
-            <SearchDialog />
-          </div>
-        </motion.div>
       </div>
     </>
   );
